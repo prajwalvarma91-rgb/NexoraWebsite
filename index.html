@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXORA | Build Beyond Limits</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+:root{--bg:#080b16;--card:#111629;--purple:#9b6cff;--cyan:#48e5ff;--text:#f5f6ff;--muted:#a3abc4}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+a{text-decoration:none;color:inherit}.container{width:88%;max-width:1200px;margin:auto}
+header{position:sticky;top:0;z-index:1000;background:rgba(8,11,22,.85);backdrop-filter:blur(18px);border-bottom:1px solid #ffffff12}
+nav{min-height:78px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:27px;font-weight:900;letter-spacing:-1px}.logo span{color:var(--purple)}
+.nav-links{display:flex;align-items:center;gap:30px}.nav-links a{color:var(--muted);font-size:14px;transition:.3s}.nav-links a:hover{color:var(--cyan)}
+.btn{display:inline-block;padding:13px 23px;border-radius:9px;color:white;font-weight:700;font-size:14px;background:linear-gradient(100deg,#7954ff,#b66cff);border:none;cursor:pointer;transition:.3s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 30px #9b6cff55}
+.menu-btn{display:none;font-size:27px;background:none;color:white;border:none;cursor:pointer}
+.hero{min-height:680px;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:500px;height:500px;right:-100px;top:60px;background:#8b5cff25;filter:blur(100px);border-radius:50%}
+.hero-content{max-width:750px;position:relative;z-index:2}
+.eyebrow{display:inline-block;color:var(--cyan);border:1px solid #48e5ff45;background:#48e5ff0b;padding:9px 15px;border-radius:30px;font-size:12px;letter-spacing:1px;margin-bottom:25px}
+.hero h1{font-size:clamp(42px,7vw,82px);line-height:1.08;letter-spacing:-3px;margin-bottom:25px}
+.gradient-text{background:linear-gradient(90deg,#a78bfa,#48e5ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:17px;line-height:1.8;max-width:570px;margin-bottom:32px}
+.hero-buttons{display:flex;gap:15px;flex-wrap:wrap}
+.btn-outline{display:inline-block;padding:13px 23px;border:1px solid #ffffff35;border-radius:9px;font-size:14px;transition:.3s}.btn-outline:hover{border-color:var(--cyan);color:var(--cyan)}
+.hero-bottom{display:flex;gap:45px;margin-top:55px;flex-wrap:wrap}.stat strong{display:block;font-size:28px;margin-bottom:5px}.stat span{font-size:12px;color:var(--muted)}
+section:not(.hero){padding:100px 0}.section-head{text-align:center;margin-bottom:55px}.section-head h2{font-size:clamp(30px,4vw,45px);margin-bottom:15px;letter-spacing:-1px}.section-head p{color:var(--muted);line-height:1.7}
+.services,.contact{background:#0b0f1e}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{padding:30px;background:linear-gradient(145deg,#151b30,#0e1222);border:1px solid #ffffff12;border-radius:18px;transition:.35s}
+.card:hover{transform:translateY(-8px);border-color:#9b6cff70;box-shadow:0 15px 40px #0004}
+.icon{width:55px;height:55px;display:grid;place-items:center;border-radius:14px;background:#9b6cff1e;font-size:26px;margin-bottom:25px}
+.card h3{margin-bottom:14px;font-size:21px}.card p{color:var(--muted);line-height:1.8;font-size:14px}
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-art{min-height:370px;display:grid;place-items:center;border:1px solid #ffffff16;border-radius:25px;background:radial-gradient(circle at 50% 45%,#9b6cff30,transparent 55%),linear-gradient(135deg,#141a30,#090d19)}
+.orbit{width:220px;height:220px;border:1px solid #9b6cff90;border-radius:50%;display:grid;place-items:center;box-shadow:0 0 60px #9b6cff20;animation:float 5s ease-in-out infinite}
+.orbit-inner{width:140px;height:140px;display:grid;place-items:center;border-radius:35px;font-size:55px;background:linear-gradient(135deg,#7954ff,#30cbe9);box-shadow:0 0 70px #7954ff50}
+.about-text h2{font-size:42px;line-height:1.2;margin-bottom:22px}.about-text p{color:var(--muted);line-height:1.9;margin-bottom:20px}
+.check{margin:15px 0;color:#dce2f8}.check span{color:var(--cyan);margin-right:10px}
+@keyframes float{50%{transform:translateY(-12px) rotate(5deg)}}
+.project{overflow:hidden;padding:0}.project-img{height:190px;display:grid;place-items:center;font-size:65px;background:linear-gradient(135deg,#35255d,#12384d)}
+.project:nth-child(2) .project-img{background:linear-gradient(135deg,#164c58,#20244e)}.project:nth-child(3) .project-img{background:linear-gradient(135deg,#59315c,#28264e)}
+.project-info{padding:24px}.tag{display:inline-block;font-size:11px;color:var(--cyan);background:#48e5ff12;border-radius:20px;padding:6px 10px;margin-bottom:14px}
+.testimonial{text-align:center;max-width:800px;margin:auto;padding:40px;border:1px solid #ffffff15;background:#111629;border-radius:20px}
+.stars{color:#ffd166;letter-spacing:5px;margin-bottom:20px}.testimonial blockquote{color:#d9def0;font-size:20px;line-height:1.8;margin-bottom:25px}.testimonial small{color:var(--muted)}
+.contact-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px}.contact-info h2{font-size:40px;margin-bottom:20px}.contact-info p{color:var(--muted);line-height:1.8}
+.contact-form{padding:30px;border:1px solid #ffffff15;background:#111629;border-radius:18px}
+.contact-form input,.contact-form textarea{width:100%;margin-bottom:17px;padding:15px;color:white;background:#080d1b;border:1px solid #ffffff20;border-radius:8px;font:inherit;outline:none}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--purple)}.contact-form textarea{resize:vertical;min-height:120px}.contact-form .btn{width:100%}
+footer{padding:30px 0;border-top:1px solid #ffffff12}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer p,footer a{color:var(--muted);font-size:13px}footer a:hover{color:var(--cyan)}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:850px){.menu-btn{display:block}.nav-links{display:none;position:absolute;top:78px;left:0;width:100%;padding:25px 6%;background:#0d1120;flex-direction:column;align-items:flex-start;gap:23px;border-bottom:1px solid #ffffff20}.nav-links.open{display:flex}.nav-links .btn{width:100%;text-align:center}.grid{grid-template-columns:repeat(2,1fr)}.about-layout,.contact-layout{grid-template-columns:1fr}.about-text h2,.contact-info h2{font-size:34px}.hero{min-height:620px}}
+@media(max-width:560px){.container{width:90%}.grid{grid-template-columns:1fr}.hero h1{letter-spacing:-1.5px}.hero p{font-size:15px}.hero-bottom{gap:25px}section:not(.hero){padding:70px 0}.about-art{min-height:300px}.testimonial{padding:25px}.testimonial blockquote{font-size:17px}}
+</style>
+</head>
+<body>
+<header><nav class="container">
+<a href="#home" class="logo">NEX<span>ORA.</span></a>
+<button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+<div class="nav-links" id="navLinks">
+<a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact" class="btn">Let's Talk ↗</a>
+</div></nav></header>
+<main>
+<section class="hero" id="home"><div class="container"><div class="hero-content">
+<span class="eyebrow">✦ INNOVATION MEETS EXCELLENCE</span>
+<h1>We Build Digital<br><span class="gradient-text">Experiences.</span></h1>
+<p>We help ambitious businesses grow through smart technology, stunning design, and powerful digital solutions that make a real difference.</p>
+<div class="hero-buttons"><a href="#services" class="btn">Explore Our Services ↗</a><a href="#about" class="btn-outline">Discover Our Story</a></div>
+<div class="hero-bottom"><div class="stat"><strong>50+</strong><span>Projects Delivered</span></div><div class="stat"><strong>30+</strong><span>Happy Clients</span></div><div class="stat"><strong>5+</strong><span>Years of Innovation</span></div></div>
+</div></div></section>
+<section class="services" id="services"><div class="container">
+<div class="section-head reveal"><span class="eyebrow">WHAT WE DO</span><h2>Solutions That Drive <span class="gradient-text">Growth</span></h2><p>Everything your business needs to thrive in the digital world.</p></div>
+<div class="grid">
+<article class="card reveal"><div class="icon">💻</div><h3>Web Development</h3><p>Fast, responsive, and beautiful websites built to turn visitors into customers.</p></article>
+<article class="card reveal"><div class="icon">🎨</div><h3>UI/UX Design</h3><p>Intuitive interfaces and meaningful experiences your users will love.</p></article>
+<article class="card reveal"><div class="icon">🤖</div><h3>AI Solutions</h3><p>Smart automation and AI-powered tools that simplify everyday business tasks.</p></article>
+<article class="card reveal"><div class="icon">📱</div><h3>App Development</h3><p>Modern applications designed for performance, reliability, and usability.</p></article>
+<article class="card reveal"><div class="icon">📈</div><h3>Digital Marketing</h3><p>Data-driven strategies to improve visibility and reach the right audience.</p></article>
+<article class="card reveal"><div class="icon">☁️</div><h3>Cloud Solutions</h3><p>Scalable digital infrastructure to support your business as it grows.</p></article>
+</div></div></section>
+<section id="about"><div class="container about-layout">
+<div class="about-art reveal"><div class="orbit"><div class="orbit-inner">✦</div></div></div>
+<div class="about-text reveal"><span class="eyebrow">WHO WE ARE</span><h2>Turning Bold Ideas Into <span class="gradient-text">Reality.</span></h2>
+<p>NEXORA is a forward-thinking digital company focused on building technology that solves real problems. We combine creativity, engineering, and strategy to help businesses move forward.</p>
+<div class="check"><span>✓</span> Creative and modern solutions</div><div class="check"><span>✓</span> User-focused design approach</div><div class="check"><span>✓</span> Quality and reliable development</div><div class="check"><span>✓</span> Continuous improvement and support</div><br><a href="#contact" class="btn">Work With Us ↗</a></div>
+</div></section>
+<section id="projects" class="services"><div class="container">
+<div class="section-head reveal"><span class="eyebrow">OUR PORTFOLIO</span><h2>Ideas Into <span class="gradient-text">Impact.</span></h2><p>A few examples of the digital experiences we can create.</p></div>
+<div class="grid">
+<article class="card project reveal"><div class="project-img">🛍️</div><div class="project-info"><span class="tag">WEB DEVELOPMENT</span><h3>E-Commerce Platform</h3><p>A modern shopping experience with clean design and simple navigation.</p></div></article>
+<article class="card project reveal"><div class="project-img">📊</div><div class="project-info"><span class="tag">DASHBOARD DESIGN</span><h3>Business Analytics</h3><p>A dashboard concept for visualizing business performance and data.</p></div></article>
+<article class="card project reveal"><div class="project-img">🧠</div><div class="project-info"><span class="tag">ARTIFICIAL INTELLIGENCE</span><h3>AI Smart Assistant</h3><p>An AI product concept designed to make daily tasks easier.</p></div></article>
+</div></div></section>
+<section><div class="container"><div class="section-head reveal"><span class="eyebrow">CLIENT FEEDBACK</span><h2>Words That <span class="gradient-text">Matter.</span></h2></div>
+<div class="testimonial reveal"><div class="stars">★★★★★</div><blockquote>"Great design, a smooth experience, and a clear focus on quality. This is the kind of digital experience every modern business should aim for."</blockquote><strong>Sample Client</strong><br><small>Business Owner</small></div>
+</div></section>
+<section class="contact" id="contact"><div class="container contact-layout">
+<div class="contact-info reveal"><span class="eyebrow">LET'S CONNECT</span><h2>Have a Project in <span class="gradient-text">Mind?</span></h2><p>Have an idea, a business challenge, or a project you'd like to discuss? Send us a message and let's explore the possibilities.</p><br><p>✉️ hello@nexora.example</p><p>📍 Bengaluru, India</p></div>
+<form class="contact-form reveal" id="contactForm"><input type="text" id="name" placeholder="Your full name" aria-label="Your full name" required><input type="email" id="email" placeholder="Email address" aria-label="Email address" required><input type="text" id="subject" placeholder="Project subject" aria-label="Project subject" required><textarea id="message" placeholder="Tell us about your project..." aria-label="Your message" required></textarea><button type="submit" class="btn">Send Message ↗</button><p id="formStatus" role="status" style="margin-top:15px;color:#48e5ff;font-size:14px"></p></form>
+</div></section>
+</main>
+<footer><div class="container footer-inner"><a href="#home" class="logo">NEX<span>ORA.</span></a><p>© <span id="year"></span> NEXORA. Demo website template.</p><a href="#home">Back to top ↑</a></div></footer>
+<script>
+const menuBtn=document.getElementById("menuBtn");
+const navLinks=document.getElementById("navLinks");
+menuBtn.addEventListener("click",()=>{const isOpen=navLinks.classList.toggle("open");menuBtn.setAttribute("aria-expanded",isOpen);menuBtn.textContent=isOpen?"✕":"☰";});
+document.querySelectorAll("#navLinks a").forEach(link=>link.addEventListener("click",()=>{navLinks.classList.remove("open");menuBtn.setAttribute("aria-expanded","false");menuBtn.textContent="☰";}));
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}});},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(element=>observer.observe(element));
+document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("contactForm").addEventListener("submit",function(event){event.preventDefault();const name=document.getElementById("name").value.trim();const status=document.getElementById("formStatus");if(!name){status.textContent="Please enter your name.";return;}status.textContent="Thanks, "+name+"! The demo form works, but no message was sent. Connect a backend to receive enquiries.";this.reset();});
+</script>
+</body>
+</html>
